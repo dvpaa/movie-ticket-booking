@@ -2,7 +2,7 @@ package jbnu.ssad1.service.member;
 
 import jbnu.ssad1.medel.dto.MemberParameter;
 import jbnu.ssad1.medel.entity.Member;
-import jbnu.ssad1.repository.MemberRepository;
+import jbnu.ssad1.repository.member.MemberRepository;
 
 import java.util.List;
 
