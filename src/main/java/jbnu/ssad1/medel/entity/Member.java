@@ -1,11 +1,19 @@
 package jbnu.ssad1.medel.entity;
 
+import jbnu.ssad1.discount.Coupon;
+import jbnu.ssad1.discount.RateDiscountPolicy;
+import jbnu.ssad1.money.Money;
+
+import java.util.List;
+
 public class Member {
 
     private Long id;
     private String email;
     private String password;
     private String name;
+    private Money point;
+    private List<Coupon> coupons;
 
     public Member() {
 
@@ -15,6 +23,8 @@ public class Member {
         this.email = email;
         this.password = password;
         this.name = name;
+        this.point = Money.wons(1000L);
+        this.coupons = List.of(new Coupon(new RateDiscountPolicy(0.1)));
     }
 
     public Long getId() {
@@ -47,5 +57,21 @@ public class Member {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Money getPoint() {
+        return point;
+    }
+
+    public void setPoint(Money point) {
+        this.point = point;
+    }
+
+    public List<Coupon> getCoupons() {
+        return coupons;
+    }
+
+    public void setCoupons(List<Coupon> coupons) {
+        this.coupons = coupons;
     }
 }
