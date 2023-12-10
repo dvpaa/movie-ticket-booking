@@ -48,6 +48,14 @@ public class MemoryMovieRepository implements MovieRepository {
     }
 
     @Override
+    public List<Movie> findByTitle(String title) {
+        return findAll()
+                .stream()
+                .filter(movie -> movie.getTitle().contains(title))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public void clear() {
         store.clear();
     }
