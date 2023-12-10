@@ -1,4 +1,4 @@
-package jbnu.ssad1.repository;
+package jbnu.ssad1.repository.member;
 
 import jbnu.ssad1.medel.dto.MemberParameter;
 import jbnu.ssad1.medel.entity.Member;

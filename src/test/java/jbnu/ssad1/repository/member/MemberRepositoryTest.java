@@ -1,7 +1,10 @@
-package jbnu.ssad1.repository;
+package jbnu.ssad1.repository.member;
 
+import jbnu.ssad1.discount.Coupon;
+import jbnu.ssad1.discount.FixedDiscountPolicy;
 import jbnu.ssad1.medel.dto.MemberParameter;
 import jbnu.ssad1.medel.entity.Member;
+import jbnu.ssad1.money.Money;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -50,7 +53,9 @@ public class MemberRepositoryTest {
         Member saved = memberRepository.save(member);
         Long memberId = saved.getId();
 
-        MemberParameter memberParameter = new MemberParameter("kgo0926@jbnu.ac.kr", "1q2w3e", "geonu");
+        MemberParameter memberParameter = new MemberParameter("kgo0926@jbnu.ac.kr", "1q2w3e", "geonu",
+                Money.wons(2000L), List.of(new Coupon(new FixedDiscountPolicy(Money.wons(1000L)))));
+
         memberRepository.update(memberId, memberParameter);
 
         Member findMember = memberRepository.findById(memberId);
