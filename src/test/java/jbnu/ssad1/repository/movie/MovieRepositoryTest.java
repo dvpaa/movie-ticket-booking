@@ -85,4 +85,15 @@ public class MovieRepositoryTest {
         assertThat(byAfterDate.size()).isEqualTo(1);
         assertThat(byAfterDate).contains(this.movie2);
     }
+
+    @Test
+    void findByMovieTitle() {
+        movieRepository.save(this.movie1);
+        movieRepository.save(this.movie2);
+
+        List<Movie> movies = movieRepository.findByTitle("서울");
+
+        assertThat(movies.size()).isEqualTo(1);
+        assertThat(movies).contains(movie1);
+    }
 }

@@ -16,5 +16,7 @@ public interface MovieRepository {
 
     List<Movie> findNotReleasedMovies(LocalDate releasedDate);
 
+    List<Movie> findByTitle(String title);
+
     void clear();
 }

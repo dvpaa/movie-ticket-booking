@@ -33,4 +33,9 @@ public class MovieServiceImpl implements MovieService {
     public List<Movie> findScreeningSoonMovies() {
         return movieRepository.findNotReleasedMovies(LocalDate.now());
     }
+
+    @Override
+    public List<Movie> findByMovieTitle(String title) {
+        return movieRepository.findByTitle(title);
+    }
 }

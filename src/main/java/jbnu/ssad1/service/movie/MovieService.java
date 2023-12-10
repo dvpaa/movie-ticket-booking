@@ -12,4 +12,6 @@ public interface MovieService {
     List<Movie> findScreeningMovies();
 
     List<Movie> findScreeningSoonMovies();
+
+    List<Movie> findByMovieTitle(String title);
 }
