@@ -3,12 +3,10 @@ package jbnu.ssad1.medel.entity;
 public class Review {
     private Long id;
     private Booking booking;
-    private Member reviewer;
     private String content;
 
-    public Review(Booking booking, Member reviewer, String content) {
+    public Review(Booking booking, String content) {
         this.booking = booking;
-        this.reviewer = reviewer;
         this.content = content;
     }
 
@@ -26,14 +24,6 @@ public class Review {
 
     public void setBooking(Booking booking) {
         this.booking = booking;
-    }
-
-    public Member getReviewer() {
-        return reviewer;
-    }
-
-    public void setReviewer(Member reviewer) {
-        this.reviewer = reviewer;
     }
 
     public String getContent() {
