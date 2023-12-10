@@ -63,6 +63,7 @@ class MemoryBookingRepositoryTest {
     void tearDown() {
         movieRepository.clear();
         screeningRepository.clear();
+        bookingRepository.clear();
     }
 
     @Test
