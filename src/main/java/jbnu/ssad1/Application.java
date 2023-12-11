@@ -179,7 +179,7 @@ public class Application {
     }
 
     private void movieDetail(List<Movie> movieList, int input) throws IOException {
-        Movie movie = movieList.get(input - 1);
+        Movie movie = frontController.getMovieDetail(movieList, input - 1);
         List<Review> reviews = frontController.findReview(movie);
         System.out.println(movie);
         if (!reviews.isEmpty()) {

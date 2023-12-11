@@ -16,21 +16,6 @@ public class ScreeningServiceImpl implements ScreeningService {
     }
 
     @Override
-    public Screening findScreeningById(Long screeningId) {
-        return this.screeningRepository.findById(screeningId);
-    }
-
-    @Override
-    public List<Screening> findAllScreening() {
-        return this.screeningRepository.findAll();
-    }
-
-    @Override
-    public List<Screening> findNotStartedScreenings(LocalDateTime now) {
-        return this.screeningRepository.findNotStarted(now);
-    }
-
-    @Override
     public List<Screening> findScreeningsByMovie(Movie movie) {
         return screeningRepository.findByMovie(movie);
     }

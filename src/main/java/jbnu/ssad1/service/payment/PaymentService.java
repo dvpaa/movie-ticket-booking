@@ -7,11 +7,7 @@ import java.util.List;
 public interface PaymentService {
     void pay(Payment payment);
 
-    Payment findPaymentById(Long paymentId);
-
-    List<Payment> findAllPayment();
-
-    List<Payment> findPaymentsByMemberId(Long memberId);
+    Payment findPaymentByBookingId(Long bookingId);
 
     void cancelPayment(Long paymentId);
 }

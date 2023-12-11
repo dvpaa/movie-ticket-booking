@@ -29,26 +29,20 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public Payment findPaymentById(Long paymentId) {
-        return paymentRepository.findById(paymentId);
-    }
-
-    @Override
-    public List<Payment> findAllPayment() {
-        return paymentRepository.findAll();
-    }
-
-    @Override
-    public List<Payment> findPaymentsByMemberId(Long memberId) {
-        return paymentRepository.findByMemberId(memberId);
+    public Payment findPaymentByBookingId(Long bookingId) {
+        return paymentRepository.findByBookingId(bookingId);
     }
 
     @Override
     public void cancelPayment(Long paymentId) {
         Payment payment = paymentRepository.findById(paymentId);
         Member member = payment.getBooking().getMember();
-        member.getCoupons().add(payment.getUsedCoupon());
-        member.getPoint().plus(payment.getUsedPoint());
+        if (payment.getUsedCoupon() != null) {
+            member.getCoupons().add(payment.getUsedCoupon());
+        }
+        if (payment.getUsedPoint() != null) {
+            member.getPoint().plus(payment.getUsedPoint());
+        }
         paymentRepository.delete(paymentId);
     }
 }
