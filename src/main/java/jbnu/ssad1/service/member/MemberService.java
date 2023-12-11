@@ -11,15 +11,5 @@ public interface MemberService {
 
     boolean login(String email, String password);
 
-    Member findMemberById(Long memberId);
-
     Member findMemberByEmail(String email);
-
-    List<Member> findAllMember();
-
-    void updateMemberInfo(Long memberId, MemberParameter memberParameter);
-
-    void deleteAccount(Long memberId);
-
-    void reset();
 }

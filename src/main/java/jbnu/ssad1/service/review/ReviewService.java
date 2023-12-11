@@ -8,9 +8,5 @@ public interface ReviewService {
 
     void writeReview(Review review);
 
-    Review findReviewById(Long reviewId);
-
-    List<Review> findAllReviews();
-
     List<Review> findReviewByMovieId(Long movieId);
 }

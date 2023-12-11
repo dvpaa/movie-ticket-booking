@@ -36,32 +36,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member findMemberById(Long memberId) {
-        return this.memberRepository.findById(memberId);
-    }
-
-    @Override
     public Member findMemberByEmail(String email) {
         return memberRepository.findByEmail(email);
-    }
-
-    @Override
-    public List<Member> findAllMember() {
-        return this.memberRepository.findAll();
-    }
-
-    @Override
-    public void updateMemberInfo(Long memberId, MemberParameter memberParameter) {
-        this.memberRepository.update(memberId, memberParameter);
-    }
-
-    @Override
-    public void deleteAccount(Long memberId) {
-        this.memberRepository.delete(memberId);
-    }
-
-    @Override
-    public void reset() {
-        this.memberRepository.clear();
     }
 }

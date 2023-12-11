@@ -19,21 +19,6 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public Booking findBookingById(Long bookingId) {
-        return bookingRepository.findById(bookingId);
-    }
-
-    @Override
-    public List<Booking> findAllBookings() {
-        return bookingRepository.findAll();
-    }
-
-    @Override
-    public List<Booking> findBookingsByMemberId(Long memberId) {
-        return bookingRepository.findByMemberId(memberId);
-    }
-
-    @Override
     public List<Booking> findBookingsByMemberEmail(String email) {
         return bookingRepository.findByMemberEmail(email);
     }

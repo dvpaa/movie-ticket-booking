@@ -15,16 +15,6 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public Movie findMovieById(Long movieId) {
-        return movieRepository.findById(movieId);
-    }
-
-    @Override
-    public List<Movie> findAllMovie() {
-        return movieRepository.findAll();
-    }
-
-    @Override
     public List<Movie> findScreeningMovies() {
         return movieRepository.findByScreening(true);
     }
