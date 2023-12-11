@@ -17,4 +17,6 @@ public interface PaymentRepository {
     void delete(Long paymentId);
 
     void clear();
+
+    Payment findByBookingId(Long bookingId);
 }

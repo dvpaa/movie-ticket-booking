@@ -50,6 +50,12 @@ public class FrontController {
         return payment;
     }
 
+    public void cancelBooking(Booking booking) {
+        bookingService.deleteBooking(booking.getId());
+        Payment payment = paymentService.findPaymentByBookingId(booking.getId());
+        paymentService.cancelPayment(payment.getId());
+    }
+
     public List<Movie> search(String query) {
         return movieService.findByMovieTitle(query);
     }
@@ -83,10 +89,6 @@ public class FrontController {
         return memberService.findMemberByEmail(email);
     }
 
-    public void cancelBooking(Booking booking) {
-        bookingService.deleteBooking(booking.getId());
-    }
-
     public void writeReview(Booking booking, String content) {
         Review review = new Review(booking, content);
         reviewService.writeReview(review);
@@ -94,5 +96,9 @@ public class FrontController {
 
     public List<Review> findReview(Movie movie) {
         return reviewService.findReviewByMovieId(movie.getId());
+    }
+
+    public Movie getMovieDetail(List<Movie> movieList, int idx) {
+        return movieList.get(idx);
     }
 }

@@ -43,4 +43,12 @@ public class MemoryPaymentRepository implements PaymentRepository {
     public void clear() {
         store.clear();
     }
+
+    @Override
+    public Payment findByBookingId(Long bookingId) {
+        return findAll().stream()
+                .filter(payment -> payment.getBooking().getId().equals(bookingId))
+                .findFirst()
+                .orElse(null);
+    }
 }
