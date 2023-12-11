@@ -16,10 +16,16 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public void pay(Payment payment) {
-        Member member = payment.getBooking().getMember();
-        member.getCoupons().remove(payment.getUsedCoupon());
-        member.getPoint().minus(payment.getUsedPoint());
         paymentRepository.save(payment);
+        Member member = payment.getBooking().getMember();
+        if (payment.getUsedCoupon() != null) {
+            member.getCoupons().remove(payment.getUsedCoupon());
+            payment.setPaymentAmount(payment.getUsedCoupon().discount(payment.getPaymentAmount()));
+        }
+        if (payment.getUsedPoint() != null) {
+            member.setPoint(member.getPoint().minus(payment.getUsedPoint()));
+            payment.setPaymentAmount(payment.getPaymentAmount().minus(payment.getUsedPoint()));
+        }
     }
 
     @Override

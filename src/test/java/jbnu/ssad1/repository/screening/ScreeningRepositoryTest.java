@@ -91,4 +91,18 @@ class ScreeningRepositoryTest {
         assertThat(notStarted).contains(screening2);
 
     }
+
+    @Test
+    void findByMovie() {
+        Screening screening1 = new Screening(movie1, LocalDateTime.of(2024, 12, 9, 13, 0));
+        Screening screening2 = new Screening(movie2, LocalDateTime.of(2024, 12, 13, 14, 0));
+
+        screeningRepository.save(screening1);
+        screeningRepository.save(screening2);
+
+        List<Screening> movies = screeningRepository.findByMovie(movie1);
+
+        assertThat(movies.size()).isEqualTo(1);
+        assertThat(movies).contains(screening1);
+    }
 }

@@ -27,6 +27,15 @@ public class Money {
         return new Money(this.money.subtract(other.money));
     }
 
+    public boolean isLessThan(Money other) {
+        return money.compareTo(other.money) < 0;
+    }
+
+    public boolean isGreaterThanOrEqual(Money other) {
+        return money.compareTo(other.money) >= 0;
+    }
+
+
     @Override
     public boolean equals(Object object) {
         if (this == object) return true;

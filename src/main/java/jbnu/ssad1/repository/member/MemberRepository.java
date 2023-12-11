@@ -11,6 +11,8 @@ public interface MemberRepository {
 
     Member findById(Long memberId);
 
+    Member findByEmail(String email);
+
     List<Member> findAll();
 
     void update(Long memberId, MemberParameter updateParam);

@@ -14,4 +14,9 @@ public class FixedDiscountPolicy implements DiscountPolicy {
     public Money calculateDiscountAmount(Money price) {
         return discount;
     }
+
+    @Override
+    public String toString() {
+        return discount + " 할인";
+    }
 }

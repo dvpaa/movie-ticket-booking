@@ -14,5 +14,7 @@ public interface BookingService {
 
     List<Booking> findBookingsByMemberId(Long memberId);
 
+    List<Booking> findBookingsByMemberEmail(String email);
+
     void deleteBooking(Long bookingId);
 }

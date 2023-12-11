@@ -76,4 +76,13 @@ public class Movie {
     public void setScreening(Boolean screening) {
         this.screening = screening;
     }
+
+    @Override
+    public String toString() {
+        return  "제목='" + title + '\'' +
+                ", 감독='" + director + '\'' +
+                ", 배우=" + actors +
+                ", 개봉일=" + releasedDate +
+                ", 평점=" + score;
+    }
 }

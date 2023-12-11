@@ -17,4 +17,6 @@ public interface BookingRepository {
     void delete(Long bookingId);
 
     void clear();
+
+    List<Booking> findByMemberEmail(String email);
 }

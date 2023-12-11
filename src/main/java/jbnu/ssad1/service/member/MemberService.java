@@ -7,9 +7,13 @@ import java.util.List;
 
 public interface MemberService {
 
-    void register(Member member);
+    boolean register(String email, String password, String name);
+
+    boolean login(String email, String password);
 
     Member findMemberById(Long memberId);
+
+    Member findMemberByEmail(String email);
 
     List<Member> findAllMember();
 

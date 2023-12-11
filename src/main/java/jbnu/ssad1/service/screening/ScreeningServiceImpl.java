@@ -1,5 +1,6 @@
 package jbnu.ssad1.service.screening;
 
+import jbnu.ssad1.medel.entity.Movie;
 import jbnu.ssad1.medel.entity.Screening;
 import jbnu.ssad1.repository.screening.ScreeningRepository;
 
@@ -27,5 +28,10 @@ public class ScreeningServiceImpl implements ScreeningService {
     @Override
     public List<Screening> findNotStartedScreenings(LocalDateTime now) {
         return this.screeningRepository.findNotStarted(now);
+    }
+
+    @Override
+    public List<Screening> findScreeningsByMovie(Movie movie) {
+        return screeningRepository.findByMovie(movie);
     }
 }

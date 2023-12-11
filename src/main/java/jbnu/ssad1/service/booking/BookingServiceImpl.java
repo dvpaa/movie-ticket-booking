@@ -34,6 +34,11 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
+    public List<Booking> findBookingsByMemberEmail(String email) {
+        return bookingRepository.findByMemberEmail(email);
+    }
+
+    @Override
     public void deleteBooking(Long bookingId) {
         bookingRepository.delete(bookingId);
     }

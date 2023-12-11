@@ -43,4 +43,11 @@ public class MemoryBookingRepository implements BookingRepository {
     public void clear() {
         store.clear();
     }
+
+    @Override
+    public List<Booking> findByMemberEmail(String email) {
+        return findAll().stream()
+                .filter(booking -> booking.getMember().getEmail().equals(email))
+                .collect(Collectors.toList());
+    }
 }

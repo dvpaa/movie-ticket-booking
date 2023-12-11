@@ -1,5 +1,6 @@
 package jbnu.ssad1.repository.screening;
 
+import jbnu.ssad1.medel.entity.Movie;
 import jbnu.ssad1.medel.entity.Screening;
 
 import java.time.LocalDateTime;
@@ -35,6 +36,13 @@ public class MemoryScreeningRepository implements ScreeningRepository {
     public List<Screening> findNotStarted(LocalDateTime now) {
         return findAll().stream()
                 .filter(screening -> screening.getScreeningDate().isAfter(now.minusMinutes(30)))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Screening> findByMovie(Movie movie) {
+        return findAll().stream()
+                .filter(screening -> screening.getMovie().equals(movie))
                 .collect(Collectors.toList());
     }
 

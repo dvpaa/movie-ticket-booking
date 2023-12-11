@@ -35,4 +35,9 @@ public class Screening {
     public void setScreeningDate(LocalDateTime screeningDate) {
         this.screeningDate = screeningDate;
     }
+
+    @Override
+    public String toString() {
+        return movie.getTitle() + " " + screeningDate;
+    }
 }

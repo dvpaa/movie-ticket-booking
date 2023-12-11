@@ -21,6 +21,14 @@ public class Payment {
         this.paymentTime = paymentTime;
     }
 
+    public Payment(Booking booking, Coupon usedCoupon, Money usedPoint) {
+        this.booking = booking;
+        this.usedCoupon = usedCoupon;
+        this.usedPoint = usedPoint;
+        this.paymentAmount = Money.wons(15000L);
+        this.paymentTime = LocalDateTime.now();
+    }
+
     public Long getId() {
         return id;
     }

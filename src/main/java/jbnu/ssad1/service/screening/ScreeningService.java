@@ -1,5 +1,6 @@
 package jbnu.ssad1.service.screening;
 
+import jbnu.ssad1.medel.entity.Movie;
 import jbnu.ssad1.medel.entity.Screening;
 
 import java.time.LocalDateTime;
@@ -11,4 +12,6 @@ public interface ScreeningService {
     List<Screening> findAllScreening();
 
     List<Screening> findNotStartedScreenings(LocalDateTime now);
+
+    List<Screening> findScreeningsByMovie(Movie movie);
 }

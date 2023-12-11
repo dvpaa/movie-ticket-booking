@@ -12,4 +12,9 @@ public class Coupon {
     public Money discount(Money price) {
         return price.minus(discountPolicy.calculateDiscountAmount(price));
     }
+
+    @Override
+    public String toString() {
+        return discountPolicy.toString();
+    }
 }

@@ -4,6 +4,7 @@ import jbnu.ssad1.discount.Coupon;
 import jbnu.ssad1.discount.RateDiscountPolicy;
 import jbnu.ssad1.money.Money;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
@@ -24,7 +25,7 @@ public class Member {
         this.password = password;
         this.name = name;
         this.point = Money.wons(1000L);
-        this.coupons = List.of(new Coupon(new RateDiscountPolicy(0.1)));
+        this.coupons = new ArrayList<>(List.of(new Coupon(new RateDiscountPolicy(0.1))));
     }
 
     public Long getId() {

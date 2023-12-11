@@ -14,4 +14,9 @@ public class RateDiscountPolicy implements  DiscountPolicy {
     public Money calculateDiscountAmount(Money price) {
         return price.times(percent);
     }
+
+    @Override
+    public String toString() {
+        return percent * 100 + "% 할인";
+    }
 }

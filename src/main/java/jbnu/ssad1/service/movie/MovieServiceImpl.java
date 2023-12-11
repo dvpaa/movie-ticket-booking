@@ -30,7 +30,7 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public List<Movie> findScreeningSoonMovies() {
+    public List<Movie> findUpcomingSoonMovies() {
         return movieRepository.findNotReleasedMovies(LocalDate.now());
     }
 
