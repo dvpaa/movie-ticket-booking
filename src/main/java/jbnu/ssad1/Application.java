@@ -346,6 +346,8 @@ public class Application {
         System.out.println("이름을 입력하세요");
         String name = this.reader.readLine();
         frontController.signUp(email, password, name);
+        System.out.println();
+        System.out.println("회원가입 성공");
     }
 
     private void signIn() throws IOException {
@@ -358,6 +360,8 @@ public class Application {
         if (frontController.signIn(email, password)) {
             this.state = true;
             this.email = email;
+            System.out.println();
+            System.out.println("로그인 성공");
             return;
         }
         System.out.println("로그인에 실패하였습니다.");
