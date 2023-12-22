@@ -30,14 +30,14 @@ public class Application {
                 System.out.println("3: 영화 검색");
                 System.out.println("4: 현재 상영작 조회");
                 System.out.println("5: 상영 예정작 조회");
-                System.out.println("6: 에매 내역 조회");
+                System.out.println("6: 예매 내역 조회");
                 System.out.println("7: 종료");
             } else {
                 System.out.println("3: 영화 검색");
                 System.out.println("4: 현재 상영작 조회");
                 System.out.println("5: 상영 예정작 조회");
-                System.out.println("6: 에매 내역 조회");
-                System.out.println("8: 종료");
+                System.out.println("6: 예매 내역 조회");
+                System.out.println("7: 종료");
             }
             System.out.println("------------------");
 
