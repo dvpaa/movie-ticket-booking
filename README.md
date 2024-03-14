@@ -5,6 +5,8 @@ COMET 방법론을 기반으로 하여, 자바의 객체지향적 특성을 활�
 
 ## [Requirement Modeling](https://github.com/dvpaa/movie-ticket-booking/wiki/Requirement-Modeling)
 
+## [Static Modeling](https://github.com/dvpaa/movie-ticket-booking/wiki/Static-Modeling)
+
 ## [Dynamic Modeling](https://github.com/dvpaa/movie-ticket-booking/wiki/Dynamic-Modeling)
 
 ## [Dynamic state machine Modeling](https://github.com/dvpaa/movie-ticket-booking/wiki/Dynamic-state-machine-Modeling)
